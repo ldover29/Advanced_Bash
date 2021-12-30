@@ -38,11 +38,11 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 
 **sudo -l**
 
-![name-of-you-image](
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/fee97db46fe2f7011c9efab9fbdb761bf6883380/Images/Step%201%206a.jpg)
 
 **sudo adduser --system --no-create-home test**
 
-![name-of-you-image](
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/fee97db46fe2f7011c9efab9fbdb761bf6883380/Images/Step%201%206b.jpg)
 
 ## Step 2: Smooth Sailing
 
@@ -50,7 +50,7 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 
 **Port 2222**
 
-![name-of-you-image](
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/ae429b36a07874e83e0d2a3d031607d192c15fa9/Images/Step%202%201.jpg)
 
 ## Step 3: Testing Your Configuration Update
 
@@ -66,13 +66,13 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 
 **ssh sysd@192.168.6.105 -p 2222**
 
-![name-of-you-image](
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/ae429b36a07874e83e0d2a3d031607d192c15fa9/Images/Step%203%20123.jpg)
 
 4. Use sudo to switch to the root user:
 
 **sudo su**
 
-![name-of-you-image](
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/ae429b36a07874e83e0d2a3d031607d192c15fa9/Images/Step%203%204.jpg)
 
 ## Step 4: Crack All the Passwords
 
@@ -85,8 +85,8 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 **sudo su**
 **john /etc/shadow**
 
-![name-of-you-image](
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/ae429b36a07874e83e0d2a3d031607d192c15fa9/Images/Step%204%202.jpg)
 
 Passwords:
 
-![name-of-you-image](
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/ae429b36a07874e83e0d2a3d031607d192c15fa9/Images/Step%204%202b.jpg)
