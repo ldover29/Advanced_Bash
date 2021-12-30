@@ -1,8 +1,14 @@
 # Advanced_Bash
 Accomplishing the goal of maintaining access of a target machine by installing a backdoor.
 
+**Goal:** 
+
+To maintain access to the target machine by installing a backdoor. You will then use the backdoor to crack sensitive passwords.
+To complete this assignment, you must complete the steps below.
 
 ## Step 1: Shadow People
+
+Create a "secret" user named _sysd_. Anyone examining _/etc/passwd_ will assume this is a service account, but in fact, you'll be using it to reconnect to the target machine for further exploitation.
 
 1. Create a secret user named sysd. Make sure this user doesn't have a home folder created:
 
@@ -46,6 +52,8 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 
 ## Step 2: Smooth Sailing
 
+In this step, you'll allow SSH access via port 2222.
+
 1. Edit the sshd_config file:
 
 **Port 2222**
@@ -53,6 +61,8 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 ![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/ae429b36a07874e83e0d2a3d031607d192c15fa9/Images/Step%202%201.jpg)
 
 ## Step 3: Testing Your Configuration Update
+
+Test your solution by testing the new backdoor SSH port. Do the following steps on the target machine:
 
 1. Restart the SSH service:
 
@@ -75,6 +85,10 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 ![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/ae429b36a07874e83e0d2a3d031607d192c15fa9/Images/Step%203%204.jpg)
 
 ## Step 4: Crack All the Passwords
+
+Next, to strengthen our control of this system, we will attempt to crack as many passwords as we can.
+
+Having access to all the accounts will also allow us to access the system if our other backdoors are closed.
 
 1. SSH back to the system using your sysd account and port 2222:
 
