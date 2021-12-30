@@ -6,19 +6,21 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 
 1. Create a secret user named sysd. Make sure this user doesn't have a home folder created:
 
-adduser --system --no-create-home sysd
+**adduser --system --no-create-home sysd**
 
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/a5ca22e065dbd3071b155b1fb557e9ff49bd6103/Images/Step%201%201.jpg)
 
+2. Give your secret user a password:
 
-Give your secret user a password:
+**passwd sysd**
 
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/a5ca22e065dbd3071b155b1fb557e9ff49bd6103/Images/Step%201%202.jpg)
 
-passwd sysd
+3. Give your secret user a system UID < 1000:
 
-Give your secret user a system UID < 1000:
+**usermod -u 50 sysd**
 
-
-usermod -u 50 sysd
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/a5ca22e065dbd3071b155b1fb557e9ff49bd6103/Images/Step%201%203.jpg)
 
 Give your secret user the same GID:
 
